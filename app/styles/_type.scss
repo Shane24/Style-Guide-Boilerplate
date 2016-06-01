@@ -1,0 +1,43 @@
+
+/* Fonts go in here, and can be turned into 'mixins' for easy use
+
+Example:  
+
+@font-face {
+  font-family: 'VectoraLTStd-Light'; 
+  src: url('../fonts/VectoraLTStd-Light.eot?') format('eot'), 
+       url('../fonts/VectoraLTStd-Light.otf')  format('opentype'),
+       url('../fonts/VectoraLTStd-Light.woff') format('woff'), 
+       url('../fonts/VectoraLTStd-Light.ttf')  format('truetype'),
+       url('../fonts/VectoraLTStd-Light.svg#VectoraLTStd-Light') format('svg');
+       font-weight: normal;
+}
+
+@mixin vectlight(){
+  font-family: 'VectoraLTStd-Light', sans-serif;
+}
+
+
+h1 {
+  @include vectreg();
+}
+
+*/
+
+
+/* Typography related variables */
+
+$base-font-size: 16px;
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+}
+
+.main-content {
+  h1, h2, h3, h4 {
+    color: #C96262;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 16px;
+  }
+}

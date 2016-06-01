@@ -1,0 +1,99 @@
+{# Set the title of the page #}
+{% set page_title = "Forms" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+      <h1>Forms</h1>
+
+
+      <!-- Modal start -->
+      <div class="panel component">
+        <h2>Horizontal Form <span class="tag in-progress">In Progress</span></h2>
+        <p>Use <code>&lt;Form horizontal&gt;</code> instead of <code>&lt;form&gt;</code>, then use <code>&lt;Col&gt;</code>s to align labels and controls. Do not use <code>&lt;Row&gt;</code> here, as <code>&lt;FormGroup&gt;</code> will already serve as a grid row in a horizontal form.</p>
+        <hr>
+        <ul class='tabs'>
+          <li><a href='#tab1'>Example</a></li>
+          <li><a href='#tab2'>JSX</a></li>
+          <li><a href='#tab3'>Sass</a></li>
+        </ul>
+
+        <div id="tab1">
+          <div class="bs-example"><div><form class="form-horizontal"><div class="form-group"><label for="formHorizontalEmail" class="col-sm-2 control-label">Email</label><div class="col-sm-10"><input type="email" placeholder="Email" id="formHorizontalEmail" class="form-control"></div></div><div class="form-group"><label for="formHorizontalPassword" class="col-sm-2 control-label">Password</label><div class="col-sm-10"><input type="password" placeholder="Password" id="formHorizontalPassword" class="form-control"></div></div><div class="form-group"><div class="col-sm-10 col-sm-offset-2"><div class="checkbox"><label><input type="checkbox"><!-- react-text: 6878 -->Remember me<!-- /react-text --></label></div></div></div><div class="form-group"><div class="col-sm-10 col-sm-offset-2"><button class="btn btn-default">Sign in</button></div></div></form></div></div>
+        </div>
+
+        <div id='tab2'>
+          <textarea class="js-code">
+
+const formInstance = (
+  <Form horizontal>
+    <FormGroup controlId="formHorizontalEmail">
+      <Col componentClass={ControlLabel} sm={2}>
+        Email
+      </Col>
+
+      <Col sm={10}>
+        <FormControl type="email" placeholder="Email" />
+      </Col>
+      
+    </FormGroup>
+
+    <FormGroup controlId="formHorizontalPassword">
+      <Col componentClass={ControlLabel} sm={2}>
+        Password
+      </Col>
+      <Col sm={10}>
+        <FormControl type="password" placeholder="Password" />
+      </Col>
+    </FormGroup>
+
+    <FormGroup>
+      <Col smOffset={2} sm={10}>
+        <Checkbox>Remember me</Checkbox>
+      </Col>
+    </FormGroup>
+
+    <FormGroup>
+      <Col smOffset={2} sm={10}>
+        <Button type="submit">
+          Sign in
+        </Button>
+      </Col>
+    </FormGroup>
+  </Form>
+);
+
+ReactDOM.render(formInstance, mountNode);
+
+          </textarea>
+
+        </div>
+        <div id='tab3'>
+          <textarea class="sass-code">
+
+.form-control-static {
+  // Size it appropriately next to real form controls
+  padding-top: ($padding-base-vertical + 1);
+  padding-bottom: ($padding-base-vertical + 1);
+  // Remove default margin from `p`
+  margin-bottom: 0;
+  min-height: ($line-height-computed + $font-size-base);
+
+  &.input-lg,
+  &.input-sm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+          </textarea>
+        </div>
+      </div>
+
+      <!-- Modal  end -->
+
+
+
+{% include "templates/footer.html" %}

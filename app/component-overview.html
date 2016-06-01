@@ -1,0 +1,57 @@
+{# Set the title of the page #}
+{% set page_title = "Overview" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+
+      <div class="panel">
+        <p>Components consist of:</p>
+        <ul>
+          <li>Atom</li>
+          <li>Block</li>
+          <li>Collection</li>
+          <li>Template</li> 
+          <li>Page</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>Atom</h3>
+        <p>An atom is the smallest possible breakdown of a component. </p>
+
+        <button>Button</button>  
+      </div>
+      
+      <div class="panel">
+        <h3>Block</h3>
+        <p>A block is a reusable component which consists of more than 1 atom.</p> 
+      </div>    
+      
+      <div class="panel">
+        <h3>Collection</h3>  
+        <p>A collection is a reusable component made up of a block AND an atom OR another block.</p>
+      </div>
+      
+      <div class="panel">
+        <h3>Template</h3>
+        <p>A template is made up of a reusable layout of components.</p>
+        <p>A layout requires at least one component, where that component can be replaced with another component, and the template layout will maintain integrity.</p>
+        <p>A template is not concerned about the components it consists of. It concerns itself with their visual structure.</p>
+      </div>
+      
+      <div class="panel">
+        <h3>Page</h3>
+        <p>A page is how you get to a layout. It’s the starting point for choosing components. </p>
+        <p>A page is not a component, nor is a page reusable.</p>
+        <p>It’s a specific instance of a combination of components.</p>
+
+      </div>
+
+    </main>
+
+    <footer>
+      
+    </footer>
+   
+   {% include "templates/footer.html" %}

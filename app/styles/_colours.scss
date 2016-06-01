@@ -1,0 +1,50 @@
+/* 
+
+Variables are stored in this partial and can be then used in any other file,
+for example:
+
+	h1 {
+	  color: $white;
+	}
+
+For more info see: http://sass-lang.com/guide
+
+*/
+
+
+/* Colors */
+
+$white: #ffffff; /* Pure white */ 
+$black: #000; // Pure black
+
+
+// Brand colours
+
+.color-block {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  p {
+    color: white;
+    text-align: center;
+  }
+}
+
+.color-303235 {
+  background-color: #303235;
+}
+
+.color-63666c {
+  background-color: #63666c;
+}
+
+.color-6754ac {
+  background-color: #6754ac;
+}
+
+.color-303235 {
+  background-color: #303235;
+}

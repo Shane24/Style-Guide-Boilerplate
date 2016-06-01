@@ -1,0 +1,21 @@
+
+/* Mixins go in here, for info see: http://sass-lang.com/guide */
+
+
+
+/* Convert pixels to em's */
+
+@function em($target, $context: $base-font-size) {
+   
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+   
+}
+
+/* Rotate mixin */
+
+@mixin rotate($deg){
+  transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+}

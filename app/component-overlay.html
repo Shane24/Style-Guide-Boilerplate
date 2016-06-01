@@ -1,0 +1,129 @@
+{# Set the title of the page #}
+{% set page_title = "Components" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+      <h1>Overlays</h1>
+
+
+      <!-- Modal start -->
+      <div class="panel component">
+        <h2>Modal <span class="tag deprecated">Deprecated</span></h2>
+        <p>Use any of the available button style types to quickly create a styled button. Just modify the <code>bsStyle</code> prop.</p>
+        <hr>
+        <ul class='tabs'>
+          <li><a href='#tab1'>Example</a></li>
+          <li><a href='#tab2'>JSX</a></li>
+          <li><a href='#tab3'>Sass</a></li>
+        </ul>
+
+        <div id="tab1">
+          <div><div class="static-modal"><div tabindex="-1" role="dialog" class="modal" style="display: block; position: relative;"><div class="modal-dialog"><div class="modal-content" role="document"><div class="modal-header"><p class="modal-title">Modal title</p></div><div class="modal-body">Modal body...</div><div class="modal-footer"><button type="button" class="btn btn-default">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div></div></div>
+        </div>
+
+        <div id='tab2'>
+          <textarea class="js-code">
+
+const modalInstance = (
+  <div className="static-modal">
+    <Modal.Dialog>
+      <Modal.Header>
+        <Modal.Title>Modal title</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        One fine body...
+      </Modal.Body>
+
+      <Modal.Footer>
+        <Button>Close</Button>
+        <Button bsStyle="primary">Save changes</Button>
+      </Modal.Footer>
+
+    </Modal.Dialog>
+  </div>
+);
+
+ReactDOM.render(modalInstance, mountNode);
+
+
+            
+          </textarea>
+
+        </div>
+        <div id='tab3'>
+          <textarea class="sass-code">
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate(0, -25%);
+    @include transition-transform(0.3s ease-out);
+  }
+  &.in .modal-dialog { @include translate(0, 0) }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $modal-content-border-color;
+  border-radius: $border-radius-large;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  background-color: $modal-backdrop-bg;
+  // Fade for backdrop
+  &.fade { @include opacity(0); }
+  &.in { @include opacity($modal-backdrop-opacity); }
+}
+
+
+          </textarea>
+        </div>
+      </div>
+
+      <!-- Modal  end -->
+
+
+
+{% include "templates/footer.html" %}

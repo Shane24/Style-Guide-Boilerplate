@@ -1,0 +1,175 @@
+/* CSS common to multiple components/elements go in here, 
+   unless it's more suitable for it to have 
+   it's own sass partial 
+*/
+
+body {
+  background: #f5f5f5;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+
+
+.main-content {
+  @media screen and (min-width: 760px){
+    margin-left: 16rem;
+    margin-right: 1rem;
+  }
+  ol {
+    padding-left: 2rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+  ul {
+    padding-left: 2rem;
+  }
+}
+
+.panel {
+  box-shadow: 0 0 1px 0 rgba(44,54,67,0.1);
+  padding: 1rem 2rem 2rem 2rem;
+  border-radius: 4px;
+  background-color: #fff;
+  margin: 2rem;
+  max-width: 900px;
+  position: relative;
+}
+
+.panel-center {
+  box-shadow: 0 0 1px 0 rgba(44,54,67,0.1);
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: #fff;
+  margin: 2rem auto;
+  max-width: 1024px;
+}
+
+.current-page {
+    border-left: 3px solid black;
+}
+
+.CodeMirror {
+  border: 1px solid #e0e0e0;
+  font-family: Consolas,"Liberation Mono", Menlo, Courier, monospace;
+  font-size: 15px;
+  height: auto!important;
+  margin-bottom: 10px;
+}
+
+img.ziggy {
+  display: block;
+  margin: 0 auto;
+  max-width: 30%;
+}
+
+.tag {
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #bbb;
+  padding: 2px 15px;
+  border-radius: 15px;
+  vertical-align: middle;
+}
+
+.tag.stable {
+  background-color: #3EB972;
+}
+
+.tag.deprecated {
+  background-color: #D81616;
+}
+
+.tag.in-progress {
+  background-color: rgb(92, 47, 218);
+}
+
+a {
+  color: rgb(231,85,113);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.component {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+
+.scrollup {
+  // Button to scroll back to top of page
+  display: none;
+  @media screen and (min-width: 760px){
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+    bottom: 4px;
+    right: 10px;
+    background-color: gainsboro;
+    color: #100F0F;
+    padding: 3px 10px;
+    border-radius: 18px;
+    font-size: 13px;
+  }
+}
+
+
+// Override default highlight color
+::selection {
+  background: #DCF6F7;
+}
+
+
+li {
+  line-height: 2em;
+}
+
+iframe {
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+
+    box-shadow: 0 0 1px 0 rgba(44, 54, 67, 0.1);
+    border-radius: 4px;
+    margin: 2rem;
+    max-width: 800px;
+    .c2 {
+        background-color: #ffffff;
+        padding: 72pt 72pt 72pt 72pt;
+        border: none;
+    }
+}
+
+.bs-example {
+    min-height: 200px;
+    border: 1px dashed rgba(128, 128, 128, 0.3);
+    display: block;
+    padding-top: 20px;
+    .control-label {
+        text-align: right;
+        margin-bottom: 0;
+        padding-top: 7px;
+    }
+    .form-group {
+       min-height: 30px;
+    }
+}

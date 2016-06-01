@@ -1,0 +1,89 @@
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+    <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+    <script src="./node_modules/codemirror/mode/htmlembedded/htmlembedded.js"></script>
+    <script src="./node_modules/codemirror/addon/hint/html-hint.js"></script>
+    <script src="./node_modules/codemirror/addon/hint/show-hint.js"></script>
+    <script src="./node_modules/codemirror/mode/xml/xml.js"></script>
+    <script src="./node_modules/codemirror/mode/jsx/jsx.js"></script>
+    <script src="./node_modules/codemirror/mode/css/css.js"></script>
+    <script src="./node_modules/codemirror/mode/sass/sass.js"></script>
+    <script src="./node_modules/codemirror/addon/hint/javascript-hint.js"></script>
+
+
+    <script>
+
+
+      function addCodeMirror() {
+
+          /* Loop through all elements with the class of 'js-code' and inits CodeMirror with javascript formatting on that element */
+          var js_elements = document.getElementsByClassName('js-code');
+          for (var j = 0; j < js_elements.length; j++) {
+
+            var editor = CodeMirror.fromTextArea(js_elements[j], {
+              lineNumbers: true,
+              extraKeys: {"Ctrl-Space": "autocomplete"},
+              mode: {name: "jsx", globalVars: true},
+              theme : "monokai"
+            });
+
+          }
+
+          /* Loop through all elements with the class of 'html-code' and inits CodeMirror with html formatting on that element */
+          var html_elements = document.getElementsByClassName('html-code');
+          for (var i = 0; i < html_elements.length; i++) {
+
+            var editor = CodeMirror.fromTextArea(html_elements[i], {
+              lineNumbers: true,
+              extraKeys: {"Ctrl-Space": "autocomplete"},
+              mode: {name: "text/html"},
+              theme : "monokai"
+            });
+
+          }
+
+          /* Loop through all elements with the class of 'css-code' and inits CodeMirror with css formatting on that element */
+          var css_elements = document.getElementsByClassName('css-code');
+          for (var x = 0; x < css_elements.length; x++) {
+
+            var editor = CodeMirror.fromTextArea(css_elements[x], {
+              lineNumbers: true,
+              extraKeys: {"Ctrl-Space": "autocomplete"},
+              mode: {name: "css", globalVars: true},
+              theme : "monokai"
+            });
+
+          }
+
+          /* Loop through all elements with the class of 'sass-code' and inits CodeMirror with sass formatting on that element */
+          var sass_elements = document.getElementsByClassName('sass-code');
+          for (var s = 0; s < sass_elements.length; s++) {
+
+            var editor = CodeMirror.fromTextArea(sass_elements[s], {
+              lineNumbers: true,
+              extraKeys: {"Ctrl-Space": "autocomplete"},
+              mode: {name: "sass", globalVars: true},
+              theme : "monokai"
+            });
+
+          }
+
+      }
+
+      addCodeMirror();
+
+    </script>
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

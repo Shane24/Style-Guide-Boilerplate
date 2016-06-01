@@ -1,0 +1,22 @@
+{# Set the title of the page #}
+{% set page_title = "Getting Started" %}
+
+{% include "templates/header.html" %}
+
+<main class="main-content">
+
+  <div class="panel">
+
+    <ul>
+      <li>Install dependencies: <code>npm install</code> & <code>bower install</code>
+      <li>Run <code>gulp serve</code> to preview and watch for changes
+      <li>Run <code>bower install --save 'package'</code> to install frontend dependencies
+      <li>Run <code>gulp serve:test</code> to run the tests in the browser
+      <li>Run <code>gulp</code> to build
+    </ul>
+
+  </div>
+  
+</main>
+
+{% include "templates/footer.html" %}

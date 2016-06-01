@@ -1,0 +1,19 @@
+.tabs {
+  text-align: right;
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+  a {
+    color: $black;
+    padding: 10px 15px;
+    display: block;
+    outline: none;
+  }
+  a.active {
+    border-bottom-color: rgb(0, 112, 210);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    color: rgb(0, 112, 210);
+  }
+}

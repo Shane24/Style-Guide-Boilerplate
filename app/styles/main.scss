@@ -1,0 +1,63 @@
+// bower:scss
+// endbower
+
+
+/**************************************************************
+
+All sass partials should be called in here.
+
+To make a new partial, create a new file in this directory 
+which begins with an underscore:
+
+For example: _login-form.scss
+
+Then below you would include it by typing out:
+
+@import 'login-form';
+
+***********************
+
+Authors:
+
+Shane Moloney
+
+***************************************************************/
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+@import 'reset'; // CSS Reset to handle cross-browser inconsistencies
+
+@import 'breakpoints'; // Media query mixins for common viewport sizes
+
+@import 'type'; // Styles relating to typography/fonts
+
+@import 'mixin'; // Mixins - See: http://sass-lang.com/guide#topic-6
+
+@import 'colours'; // Variables for colours used
+
+@import 'common'; // Global styles which do not require their own partial
+
+@import 'buttons'; // Styles for buttons
+
+@import 'grid'; // Grid system
+
+@import 'layout'; // Could include layout helper classes
+
+@import 'header'; // styles for page header
+
+@import 'nav'; // Styles for navigation
+
+@import 'home'; // Styles specific to index/home page
+
+@import 'footer'; // Styles for site footer
+
+@import 'forms'; // Styles for forms
+
+@import 'tabs'; // Styles for tabs

@@ -1,0 +1,43 @@
+{# Set the title of the page #}
+{% set page_title = "Contributing" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+      <div class="panel">
+        <h1>Git Workflow:</h1>
+
+        <ol>
+          <li>Get the latest version of master</li>
+
+          <li>Create your own feature branch, prefixed by your initials. Branches should ideally be scoped to one feature, and short-lived.</li>
+
+          <li>git checkout -b xz-feature</li>
+
+          <li>Discuss the feature with another developer, they should eventually review your code.</li>
+
+          <li>Do some work</li>
+
+          <li>Push to a remote branch, rebasing beforehand if you have redundant commits which should be squashed</li>
+
+          <li>Create a Pull Request</li>
+
+          <li>Ask another developer to review the code</li>
+
+          <li>Reply to comments and make amends, if necessary</li>
+
+          <li>Merge into master once you receive a +1</li>
+
+          <li>Delete your feature branch</li>
+        </ol>
+
+      </div>
+
+    </main>
+
+    <footer>
+      
+    </footer>
+
+
+{% include "templates/footer.html" %}

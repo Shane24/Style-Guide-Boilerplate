@@ -1,0 +1,46 @@
+/*************************************
+
+Example usage: http://codepen.io/anon/pen/BojPJa
+
+We're also making use below of the the @content directive, which allows us to pass a content block into a mixin, added in Sass v3.2
+
+*************************************/
+
+/* 
+
+See https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ for 
+info on Media Queries for Standard Devices
+
+*/
+
+
+
+
+// Mixin for retina screens
+/* Example usage:
+	img {
+	  width: 100px;
+
+	  @include retina {
+	    width: 200px;
+	  }
+	}
+*/
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+// Mixin for print styles
+@mixin print {
+  @media print {
+    @content;
+  }
+}

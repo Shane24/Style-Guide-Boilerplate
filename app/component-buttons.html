@@ -1,0 +1,181 @@
+{# Set the title of the page #}
+{% set page_title = "Buttons" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+      <h1>Buttons</h1>
+
+
+      <!-- Button group start -->
+      <div class="panel component">
+        <h2>Button <span class="tag stable">Stable</span></h2>
+        <p>Use any of the available button style types to quickly create a styled button. Just modify the <code>bsStyle</code> prop.</p>
+        <hr>
+        <ul class='tabs'>
+          <li><a href='#tab1'>Example</a></li>
+          <li><a href='#tab2'>JSX</a></li>
+          <li><a href='#tab3'>Sass</a></li>
+        </ul>
+
+        <div id="tab1">
+        <div role="toolbar" class="btn-toolbar"><button type="button" class="btn btn-default">Default</button><button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-success">Success</button><button type="button" class="btn btn-info">Info</button><button type="button" class="btn btn-warning">Warning</button><button type="button" class="btn btn-danger">Danger</button><button type="button" class="btn btn-link">Link</button></div>
+          
+        </div>
+
+        <div id='tab2'>
+          <textarea class="js-code">
+
+const buttonsInstance = (
+  <ButtonToolbar>
+    {/* Standard button */}
+    <Button>Default</Button>
+
+    {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
+    <Button bsStyle="primary">Primary</Button>
+
+    {/* Indicates a successful or positive action */}
+    <Button bsStyle="success">Success</Button>
+
+    {/* Contextual button for informational alert messages */}
+    <Button bsStyle="info">Info</Button>
+
+    {/* Indicates caution should be taken with this action */}
+    <Button bsStyle="warning">Warning</Button>
+
+    {/* Indicates a dangerous or potentially negative action */}
+    <Button bsStyle="danger">Danger</Button>
+
+    {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
+    <Button bsStyle="link">Link</Button>
+  </ButtonToolbar>
+);
+
+ReactDOM.render(buttonsInstance, mountNode);
+
+            
+          </textarea>
+
+        </div>
+        <div id='tab3'>
+          <textarea class="sass-code">
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+// Success appears as green
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+
+          </textarea>
+        </div>
+      </div>
+
+      <!-- Button group end -->
+
+
+      <!-- Button size group start -->
+      <div class="panel component">
+        <h2>Button Sizes <span class="tag stable">Stable</span></h2>
+        <p>Fancy larger or smaller buttons? Add <code>bsSize="large"</code>, <code>bsSize="small"</code>, or <code>bsSize="xsmall"</code> for additional sizes.</p>
+        <hr>
+        <ul class='tabs'> 
+          <li><a href='#buttonTab1'>Example</a></li>
+          <li><a href='#buttonTab2'>JSX</a></li>
+          <li><a href='#buttonTab3'>Sass</a></li>
+        </ul>
+
+        <div id="buttonTab1">
+          <div>
+            <div role="toolbar" class="btn-toolbar">
+              <button type="button" class="btn btn-lg btn-primary">Large button</button>
+              <button type="button" class="btn btn-lg btn-default">Large button</button>
+            </div>
+            <br>
+            <div role="toolbar" class="btn-toolbar">
+              <button type="button" class="btn btn-primary">Default button</button>
+              <button type="button" class="btn btn-default">Default button</button>
+            </div>
+            <br>
+            <div role="toolbar" class="btn-toolbar">
+              <button type="button" class="btn btn-sm btn-primary">Small button</button>
+              <button type="button" class="btn btn-sm btn-default">Small button</button>
+            </div>
+            <br>
+            <div role="toolbar" class="btn-toolbar">
+              <button type="button" class="btn btn-xs btn-primary">Extra small button</button>
+              <button type="button" class="btn btn-xs btn-default">Extra small button</button>
+            </div>
+          </div>
+        </div>
+
+        <div id='buttonTab2'>
+          <textarea class="js-code">
+const buttonsInstance = (
+  <div>
+    <ButtonToolbar>
+      <Button bsStyle="primary" bsSize="large">Large button</Button>
+      <Button bsSize="large">Large button</Button>
+    </ButtonToolbar>
+    <ButtonToolbar>
+      <Button bsStyle="primary">Default button</Button>
+      <Button>Default button</Button>
+    </ButtonToolbar>
+    <ButtonToolbar>
+      <Button bsStyle="primary" bsSize="small">Small button</Button>
+      <Button bsSize="small">Small button</Button>
+    </ButtonToolbar>
+    <ButtonToolbar>
+      <Button bsStyle="primary" bsSize="xsmall">Extra small button</Button>
+      <Button bsSize="xsmall">Extra small button</Button>
+    </ButtonToolbar>
+  </div>
+);
+
+ReactDOM.render(buttonsInstance, mountNode);
+            
+          </textarea>
+
+        </div>
+        <div id='buttonTab3'>
+          <textarea class="sass-code">
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+.btn-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+
+          </textarea>
+        </div>
+      </div>
+
+      <!-- Button group end -->
+
+
+
+{% include "templates/footer.html" %}

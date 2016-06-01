@@ -1,0 +1,132 @@
+{# Set the title of the page #}
+{% set page_title = "Sass" %}
+
+{# Include the page header #}
+{% include "templates/header.html" %}
+
+
+    <main class="main-content">
+
+      <div class="panel">
+        <h2>Naming</h2>
+        <p><code>id</code>'s and <code>classes</code> should all be namespace'd with the prefix <code>ds-</code>, or whatever relevant prefix depending on the styles being used. We can use interpolation in Sass to easily achieve this.</p>
+        <p>Example:</p>
+
+        <!-- Codemirror example -->
+        <textarea class="sass-code">
+
+/* Declare namespace prefix */
+$ds: "ds-" !default;
+
+/* Use Sass's interpolation to apply namespace prefix */
+.#{$ds}component {
+  background-color: #000;
+  &-modifier {
+    padding: 20px;
+  }
+}
+
+/* Which will out put in CSS to: */
+.ds-component {
+  background-color: #000;
+}
+
+
+/* For more info on Sass's interpolation, see http://sass-lang.com/documentation/file.SASS_REFERENCE.html */
+
+        </textarea>
+
+        <h2>Rules</h2>
+        
+        <h3>Avoid element selectors</h3>
+        <p>Use child or descendant selectors with element selectors if the element selectors will and can be predictable. Using <code>.module span</code> is great if a span will predictably be used and styled the same way every time while within that module.</p>
+        <p>However, as a project grows in complexity, the more likely that you will need to expand a component’s functionality and the more limited you will be in having used such a generic element within your rule.</p>
+        
+        <h3>Do not use <code>id</code>'s for styling</h3>
+        <p>IDs may be used as fragment identifiers, and for JavaScript’s getElementById etc. They should <strong>never</strong> be used to style an element.</p>
+        
+        <h3>Sass Inception Rule</h3>
+        <p>Sass nesting should never be more than 3 levels deep. If you can limit it to 1 level deep, even better! We want highly performant CSS.</p>
+        
+        <h3>Be cautious using @extend</h3>
+        <p>There are <a href="http://www.sitepoint.com/avoid-sass-extend/">multiple</a> <a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/"> reasons</a><a href="http://pressupinc.com/blog/2014/11/dont-overextend-yourself-in-sass/"> not</a> to use @extend. However it can be used <a href="https://www.smashingmagazine.com/2015/05/extending-in-sass-without-mess/"> without making a mess</a> with the help of Sass's <a href="http://thesassway.com/intermediate/understanding-placeholder-selectors"> %placeholder selectors. </a>Only use the @extend directive to extend placeholders, not other selectors.</p>
+
+        <h3>Comments</h3>
+        <p>Write code to be readable and understandable, not to save bytes. Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. </p>
+        <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
+
+        <!-- Codemirror example, hence the weird indentation -->
+        <textarea class="sass-code">
+
+/* Bad example */
+/* Modal header */
+.modal-header {
+  ...
+}
+
+/* Good example */
+/* Wrapping element for .modal-title and .modal-close */
+.modal-header {
+  ...
+}
+        </textarea>
+
+        <h3>Javascript hooks</h3>
+        <p>Classes used specifically for JS hooks should be given the prefix "<code>js-</code>". This ensures that we maintain a distinction between content and functionality. These classes should never be used for style.</p>
+
+        <!-- Codemirror example -->
+        <textarea class="html-code">
+
+<div class="ds-js-tab">This element can be reached by javascript</div>
+        </textarea>
+
+        <h3>Variable names</h3>
+        <p>Generic, modular names for variables should be used.</p>
+
+        <!-- Codemirror example -->
+        <textarea class="sass-code">
+
+// Bad: 
+$red = '#EE0000'; 
+
+// Good 
+$color-danger: '#EE0000';
+        </textarea>
+
+        <p>If specificity is needed, variables should still be Generic > Specific in their naming convention.</p>
+<!-- Codemirror example -->
+        <textarea class="sass-code">
+
+// Bad: 
+$blue;
+$dark-blue;
+$medium-blue;
+$darkest-blue;
+$light-blue;
+$lightest-blue;
+
+// Better 
+$blue;
+$blue-dark;
+$blue-darkest;
+$blue-light;
+$blue-lightest;
+        </textarea>
+
+        <p>This not only helps in recollection, but will allow a text editor (such as Sublime Text, Coda etc.) to easily suggest colors. This way you don't have to memorize exactly how you named your variables. Rather, you can start generically and get more specific as the text editor auto-suggests variable names.</p>
+
+      </div>
+
+    </main>
+
+
+
+    <footer>
+      
+    </footer>
+
+
+
+
+    
+{% include "templates/footer.html" %}

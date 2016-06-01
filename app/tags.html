@@ -1,0 +1,43 @@
+{# Set the title of the page #}
+{% set page_title = "Tags" %}
+
+{% include "templates/header.html" %}
+
+    <main class="main-content">
+
+      <div class="panel">
+
+        <h2>Component Tags</h2>
+          <p>Component tags can be used to identify whether components are being actively developed, dev-ready and stable, or deprecated, etc.</p>
+          <p>Tags could also be used as part of the library build system, eg: Components marked with 'deprecated' tags could excluded from production builds, but remain in the library for future reference or legacy implementations.</p>
+
+          <p>Other tags could be introduced if necessary. These are just examples.</p>
+
+
+          <h3>The tags are:</h3>
+
+          <p>
+            <span class="tag in-progress">In-Progress</span>
+          </p>
+          <p>A component with this tag is under development, and is not ready for production use.</p>
+
+<br>
+          <p>
+            <span class="tag deprected">Deprecated</span>
+          </p>
+          <p>A component with this tag is no longer to be used. The component may have been replaced by a better or alternative component, etc.</p>
+
+<br>
+          <p>
+            <span class="tag stable">Stable</span>
+          </p>
+          <p>A component with this tag is ready for use in production applications.</p>
+
+      </div>
+
+    </main>
+
+
+
+
+{% include "templates/footer.html" %}
